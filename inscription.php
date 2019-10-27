@@ -56,7 +56,7 @@ if(isset($_SESSION['pseudo'])){
           unset($_SESSION['mail']);
           ?>
           required autocomplete="off" /> </br> </br>
-          <?php if(isset($_SESSION['pb'])&&($_SESSION['pb']==1||$_SESSION['pb']==3 )) echo"ce mail existe déjà"; ?>
+          <?php if(isset($_SESSION['pb'])&&($_SESSION['pb']==1||$_SESSION['pb']==3 )) echo"ce mail existe déjà</br>"; ?>
 
           </br>
 
@@ -89,7 +89,7 @@ if(isset($_SESSION['pseudo'])){
           ?>
           required autocomplete="off" /> </br> </br>
 
-          <?php if(isset($_SESSION['pb'])&&($_SESSION['pb']==1||$_SESSION['pb']==2 )) echo"ce pseudo existe déjà"; ?>
+          <?php if(isset($_SESSION['pb'])&&($_SESSION['pb']==1||$_SESSION['pb']==2 )) echo"ce pseudo existe déjà</br>"; ?>
           </br>
 
           <?php   unset($_SESSION["pb"]);?>

@@ -4,11 +4,12 @@ $host  = $_SERVER['HTTP_HOST'];
 $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 try{
 
+  $securemdp = md5("Ledeux".$_POST['mdp']."Hallowen");
   $requete = connection()->prepare('select blog.creation_redacteur(:nom, :prenom, :email, :mdp, :pseudo);');
   $requete->bindParam(':nom',$_POST['nom'],PDO::PARAM_STR);
   $requete->bindParam(':prenom',$_POST['prenom'],PDO::PARAM_STR);
   $requete->bindParam(':email',$_POST['email'],PDO::PARAM_STR);
-  $requete->bindParam(':mdp',$_POST['mdp'],PDO::PARAM_STR);
+  $requete->bindParam(':mdp',$securemdp,PDO::PARAM_STR);
   $requete->bindParam(':pseudo',$_POST['pseudo'],PDO::PARAM_STR);
   $requete->execute();
   $pb = $requete->fetch();

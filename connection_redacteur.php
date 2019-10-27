@@ -20,10 +20,8 @@ if(isset($_SESSION['pseudo'])){ // regarde si la personne qui accède à la page
     <header>
       <nav>
         <ul>
-          <?php
-          echo "<li><a href=\"./connection_redacteur.php\"><div> se connecter</div/></a></li>";
-          echo "<li><a href=\"./page_acceuil.php\"><div>retour à l'acceuil</div></a></li>";
-          ?>
+          <li><a href="./inscription.php"><div>Inscription</div></a></li>
+          <li><a href="./page_acceuil.php"><div>retour à l'acceuil</div></a></li>
         </ul>
       </nav>
     </header>
@@ -40,7 +38,7 @@ if(isset($_SESSION['pseudo'])){ // regarde si la personne qui accède à la page
           <input type="password" size="20" placeholder="mot de passe" name="mdp" required/> </br> </br>
 
           <?php
-          if(isset($_SESSION['pb'])) echo"cet identifiant n'existe pas ou le mot de passe est éronné";
+          if(isset($_SESSION['pb'])) echo"cet identifiant n'existe pas ou le mot de passe est éronné</br>";
           unset($_SESSION["pb"]);
           ?>
           </br>
