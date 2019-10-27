@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 26 oct. 2019 à 18:50
+-- Généré le :  Dim 27 oct. 2019 à 13:45
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -86,19 +86,17 @@ CREATE TABLE IF NOT EXISTS `redacteur` (
   PRIMARY KEY (`idredacteur`),
   UNIQUE KEY `pseudo` (`pseudo`),
   UNIQUE KEY `adressemail` (`mail`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `redacteur`
 --
 
 INSERT INTO `redacteur` (`idredacteur`, `nom`, `prenom`, `mail`, `motdepasse`, `pseudo`) VALUES
-(9, 'tet', 'Jean', 'Jean@gmail.com', 'test', 'testeur'),
 (8, 'Tac', 'Tic', 'Leticettac@gmail.com', 'Azertyuiop', 'TacLeShiba'),
 (5, 'Flavien', 'Ledeux', 'ledeux.flavien@wanadoo.fr', 'test', 'FLedeux'),
 (6, 'Roger', 'Nils', 'nilsroger@hotmail.fr', 'abcabcabc', 'Ashela'),
-(7, 'LEVIS', 'Lucas', 'lucaslevis@orange.fr', 'waza', 'KooKie'),
-(10, 'Nils', 'Roger', 'Roger@gmail.com', 'Bretagne', 'touk');
+(7, 'LEVIS', 'Lucas', 'lucaslevis@orange.fr', 'waza', 'KooKie');
 
 -- --------------------------------------------------------
 
