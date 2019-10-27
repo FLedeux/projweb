@@ -27,7 +27,7 @@ DELIMITER $$
 -- Fonctions
 --
 DROP FUNCTION IF EXISTS `creation_redacteur`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `creation_redacteur` (`nom` VARCHAR(50) CHARSET utf16, `prenom` VARCHAR(50) CHARSET utf16, `mail_in` VARCHAR(50) CHARSET utf16, `mdp` VARCHAR(50) CHARSET utf16, `pseudo_in` VARCHAR(50) CHARSET utf16) RETURNS INT(2) MODIFIES SQL DATA
+CREATE FUNCTION `creation_redacteur` (`nom` VARCHAR(50) CHARSET utf16, `prenom` VARCHAR(50) CHARSET utf16, `mail_in` VARCHAR(50) CHARSET utf16, `mdp` VARCHAR(50) CHARSET utf16, `pseudo_in` VARCHAR(50) CHARSET utf16) RETURNS INT(2) MODIFIES SQL DATA
 BEGIN
 DECLARE pb INT DEFAULT 0;
 DECLARE pseudo_bdd Varchar(50);
