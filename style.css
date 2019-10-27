@@ -113,3 +113,11 @@ textarea{
 #crearticle:hover{
   background-color:  #69C7B5 ;
 }
+
+.rouge{
+  color:#f00;
+}
+
+.vert{
+  color: green;
+}
