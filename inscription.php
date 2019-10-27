@@ -1,3 +1,4 @@
+<script type="text/javascript" src="verif_mdp.js"></script>
 <?php
 session_start();
 if(isset($_SESSION['pseudo'])){
@@ -58,13 +59,25 @@ if(isset($_SESSION['pseudo'])){
         </br>
 
         mot de passe :
-        <input type="password" size"20" placeholder="mot de passe" name="mdp"
+        <input id="mdp1" type="password" oninput="check_mdp()" size"20" placeholder="mot de passe" name="mdp"
         <?php
         if(isset($_SESSION['mdp'])) echo 'value="' . $_SESSION['mdp'] . '"';
         unset($_SESSION['mdp']);
         ?>
         required /> </br> </br>
 <!-- rajouter verif mdp -->
+
+        vérification de mot de passe :
+        <input id="mdp2" type="password" oninput="check_mdp()" size"20" placeholder="mot de passe" name="mdp"
+        <?php
+        if(isset($_SESSION['mdp'])) echo 'value="' . $_SESSION['mdp'] . '"';
+        unset($_SESSION['mdp']);
+        ?>
+        required /> </br> </br>
+
+        <p id="label_mdp">
+
+        </p>
 
         pseudo :
         <input type="text" size"20" placeholder="pseudo" name="pseudo"
@@ -79,7 +92,7 @@ if(isset($_SESSION['pseudo'])){
 
         <?php   unset($_SESSION["pb"]);?>
 
-        <input type="submit" name="s'inscrire" value="inscription" required/>
+        <input type="submit" onclick="javascript: return check_mdp_valider();" name="s'inscrire" value="inscription" required/>
       </form>
     </article>
 

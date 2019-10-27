@@ -21,7 +21,7 @@ if(!isset($_SESSION['pseudo'])){
      <nav>
        <ul>
          <?php
-          echo "<li><div>" .$_SESSION['pseudo'] . "</div></li>";
+          echo "<a href=\"./ses_topic.php\"><li> <div>" . $_SESSION['pseudo'] . "</div> </li></a>";
           echo "<a href=\"./traitement_deconnection.php\" onclick=\"javascript: return confirm('voulez vous vous déconnecter?');\"><li><div>Deconnexion</div></li></a>";
           echo "<a href=\"./page_acceuil.php\"><li><div>retour à l'accueil</li></div></a>";
           ?>
