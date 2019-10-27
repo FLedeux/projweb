@@ -9,6 +9,7 @@ if(isset($_SESSION['pseudo'])){ // regarde si la personne qui accède à la page
   header("Location: http://$host$uri/$extra");
 }
 ?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Connexion</title>
@@ -20,29 +21,31 @@ if(isset($_SESSION['pseudo'])){ // regarde si la personne qui accède à la page
       <nav>
         <ul>
           <?php
-          echo "<a href=\"./connection_redacteur.php\"><li><div> se connecter</div/></li></a>";
-          echo "<a href=\"./page_acceuil.php\"><li><div>retour à l'acceuil</div></li></a>";
+          echo "<li><a href=\"./connection_redacteur.php\"><div> se connecter</div/></a></li>";
+          echo "<li><a href=\"./page_acceuil.php\"><div>retour à l'acceuil</div></a></li>";
           ?>
         </ul>
       </nav>
     </header>
     <article>
+      <h1>Connexion</h1>
       <form method="post" action="traitement_connection_redacteur.php"> </br>
 
-        identifiant :
+        <div class="no_spe">
+          identifiant :
 
-        <input type="text" size"20" placeholder="pseudo ou email" name="identifiant" required autocomplete="off"/> </br> </br>
+          <input type="text" size="20" placeholder="pseudo ou email" name="identifiant" required autocomplete="off"/> </br> </br>
 
-        mot de passe :
-        <input type="password" size"20" placeholder="mot de passe" name="mdp" required/> </br> </br>
+          mot de passe :
+          <input type="password" size="20" placeholder="mot de passe" name="mdp" required/> </br> </br>
 
-        <?php
-        if(isset($_SESSION['pb'])) echo"cet identifiant n'existe pas ou le mot de passe est éronné";
-        unset($_SESSION["pb"]);
-        ?>
-        </br>
-
-        <input type="submit" name="connexion" value="connection" required/>
+          <?php
+          if(isset($_SESSION['pb'])) echo"cet identifiant n'existe pas ou le mot de passe est éronné";
+          unset($_SESSION["pb"]);
+          ?>
+          </br>
+        </div>
+        <input type="submit" name="connexion" value="connection"/>
       </form>
     </article>
 

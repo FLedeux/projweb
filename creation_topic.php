@@ -9,7 +9,7 @@ if(!isset($_SESSION['pseudo'])){
   exit();
 }
 ?>
-
+<!DOCTYPE html>
 <html>
  <head>
    <title>Creation d'un article</title>

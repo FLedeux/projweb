@@ -7,6 +7,7 @@ if(!isset($_SESSION['BDD_ERROR'])){ // regarde si la personne qui accède à la 
   header("Location: http://$host$uri/$extra");
 }
 ?>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Erreur de la base de données</title>
@@ -17,7 +18,7 @@ if(!isset($_SESSION['BDD_ERROR'])){ // regarde si la personne qui accède à la 
     <header>
       <nav>
         <ul>
-          <a href="./page_acceuil.php"><li><div>retour à l'acceuil</div></li></a>
+          <li><a href="./page_acceuil.php"><div>retour à l'acceuil</div></a></li>
         </ul>
       </nav>
     </header>

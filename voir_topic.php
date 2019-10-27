@@ -5,7 +5,7 @@ session_start();
 if(!isset($_SESSION['idsujet']))$_SESSION['idsujet']=$_GET['idsujet'];
 ?>
 
-
+<!DOCTYPE html>
 <html>
   <head>
     <?php
@@ -26,14 +26,14 @@ if(!isset($_SESSION['idsujet']))$_SESSION['idsujet']=$_GET['idsujet'];
         <ul>
           <?php
 	         if(isset($_SESSION['pseudo'])){
-             echo "<a href=\"./ses_topic.php\"><li> <div>" . $_SESSION['pseudo'] . "</div> </li></a>";
-             echo "<a href=\"./deconnection.php\" onclick=\"javascript: return confirm('voulez vous vous déconnecter?');\"><li><div>Deconnexion</div></li></a>";
+             echo "<li><a href=\"./ses_topic.php\"><div>" . $_SESSION['pseudo'] . "</div></a></li>";
+             echo "<li><a href=\"./deconnection.php\" onclick=\"javascript: return confirm('voulez vous vous déconnecter?');\"><div>Deconnexion</div></a></li>";
            }
            else{
-             echo "<a href=\"./connection_redacteur.php\"><li><div>Connexion</div></li></a>";
-             echo "<a href=\"./inscription.php\"><li><div>Inscription</div></li></a>";
+             echo "<li><a href=\"./connection_redacteur.php\"><div>Connexion</div></li></a></li>";
+             echo "<li><a href=\"./inscription.php\"><div>Inscription</div></li></a></li>";
            }
-           echo "<a href=\"./page_acceuil.php\"><li><div>Retour à l'accueil</div></li></a>";
+           echo "<li><a href=\"./page_acceuil.php\"><div>Retour à l'accueil</div></a></li>";
            ?>
         </ul>
       </nav>
@@ -44,9 +44,9 @@ if(!isset($_SESSION['idsujet']))$_SESSION['idsujet']=$_GET['idsujet'];
           $dateheure = explode(" ",$value['datesujet']); // séparer le temps du jour
 
           echo "<div>";
-          echo "<h1>" . $value['titresujet'] . "</h1>" . "</br>";
+          echo "<h1 class=\"center\">" . $value['titresujet'] . "</h1>" . "</br>";
           echo  nl2br($value['textesujet']) ."</br></br>";
-          echo "Par " . $value['pseudo'] . " le " . $dateheure[0] . " à " . $dateheure[1];
+          echo "<p class=\"center\">Par " . $value['pseudo'] . " le " . $dateheure[0] . " à " . $dateheure[1] . "</p>";
           echo "</div>";
           echo "</br>";
 
@@ -55,8 +55,8 @@ if(!isset($_SESSION['idsujet']))$_SESSION['idsujet']=$_GET['idsujet'];
           $requete->execute();
 
           while($value=$requete->fetch()){
-            $dateheure = explode(" ",$value['daterep']); // séparer le temps du jour
-            echo "<div>" . nl2br($value['textereponse']) ."</br></br> Par " . $value['pseudo'] . " le " . $dateheure[0] . " à " . $dateheure[1] . "</div> </br>";
+            $dateheure = explode(" ",$value['daterep']); // sépare le temps du jour
+            echo "<div>" . nl2br($value['textereponse']) ."</br></br><p class=\"center\"> Par " . $value['pseudo'] . " le " . $dateheure[0] . " à " . $dateheure[1] . "</p></div> </br>";
           }
 
           if(isset($_SESSION['pseudo'])){
@@ -66,9 +66,13 @@ if(!isset($_SESSION['idsujet']))$_SESSION['idsujet']=$_GET['idsujet'];
 
             </br>
 
-            <input type="submit" name="répondre" value="répondre" required/>';
+            <input type="submit" name="répondre" value="répondre"/>
+            </br>
+            </br>';
           }
-          else echo "<a href=\"./connection_redacteur.php\">Connectez vous pour répondre</a>";
+          else echo "<a href=\"./connection_redacteur.php\">Connectez vous pour répondre</a>
+          </br>
+          </br>";
         }
         else{//cas id inconnu
           echo "<div> la page que vous chercher n'existe pas </br>
