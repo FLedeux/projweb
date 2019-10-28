@@ -4,7 +4,7 @@ $host  = $_SERVER['HTTP_HOST'];
 $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 try{
 
-  $securemdp = md5("Ledeux".$_POST['mdp']."Hallowen");
+  $securemdp = md5("Ledeux".$_POST['mdp']."Hallowen");//ryptage du mot de passe
   $requete = connection()->prepare('select blog.creation_redacteur(:nom, :prenom, :email, :mdp, :pseudo);');
   $requete->bindParam(':nom',$_POST['nom'],PDO::PARAM_STR);
   $requete->bindParam(':prenom',$_POST['prenom'],PDO::PARAM_STR);
