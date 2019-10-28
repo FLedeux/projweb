@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 27 oct. 2019 à 13:45
+-- Généré le :  lun. 28 oct. 2019 à 10:36
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -27,7 +27,7 @@ DELIMITER $$
 -- Fonctions
 --
 DROP FUNCTION IF EXISTS `creation_redacteur`$$
-CREATE FUNCTION `creation_redacteur` (`nom` VARCHAR(50) CHARSET utf16, `prenom` VARCHAR(50) CHARSET utf16, `mail_in` VARCHAR(50) CHARSET utf16, `mdp` VARCHAR(50) CHARSET utf16, `pseudo_in` VARCHAR(50) CHARSET utf16) RETURNS INT(2) MODIFIES SQL DATA
+CREATE DEFINER=`root`@`localhost` FUNCTION `creation_redacteur` (`nom` VARCHAR(50) CHARSET utf16, `prenom` VARCHAR(50) CHARSET utf16, `mail_in` VARCHAR(50) CHARSET utf16, `mdp` VARCHAR(50) CHARSET utf16, `pseudo_in` VARCHAR(50) CHARSET utf16) RETURNS INT(2) MODIFIES SQL DATA
 BEGIN
 DECLARE pb INT DEFAULT 0;
 DECLARE pseudo_bdd Varchar(50);
@@ -86,17 +86,17 @@ CREATE TABLE IF NOT EXISTS `redacteur` (
   PRIMARY KEY (`idredacteur`),
   UNIQUE KEY `pseudo` (`pseudo`),
   UNIQUE KEY `adressemail` (`mail`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `redacteur`
 --
 
 INSERT INTO `redacteur` (`idredacteur`, `nom`, `prenom`, `mail`, `motdepasse`, `pseudo`) VALUES
-(8, 'Tac', 'Tic', 'Leticettac@gmail.com', 'Azertyuiop', 'TacLeShiba'),
-(5, 'Flavien', 'Ledeux', 'ledeux.flavien@wanadoo.fr', 'test', 'FLedeux'),
-(6, 'Roger', 'Nils', 'nilsroger@hotmail.fr', 'abcabcabc', 'Ashela'),
-(7, 'LEVIS', 'Lucas', 'lucaslevis@orange.fr', 'waza', 'KooKie');
+(8, 'Tac', 'Tic', 'Leticattac@gmail.com', '8779a3418377f0190bcebbd92983a9dd', 'TasLeShiba'),
+(6, 'Roger', 'Nils', 'nilsroger@hotmail.fr', 'e547a42a6154d39141690c545b7909eb', 'Ashela'),
+(7, 'Levis', 'Lucas', 'lucaslevis@orange.fr', 'c5ad09dafed96c3812b6563f03282b9e', 'Kookie'),
+(5, 'Ledeux', 'Flavien', 'Ledeux@gmail.com', 'bcb86835ec80131d1058b6d9790ef93b', 'FLedeux');
 
 -- --------------------------------------------------------
 
