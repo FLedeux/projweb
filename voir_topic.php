@@ -27,7 +27,7 @@ if(!isset($_SESSION['idsujet']))$_SESSION['idsujet']=$_GET['idsujet'];
           <?php
 	         if(isset($_SESSION['pseudo'])){
              echo "<li><a href=\"./ses_topic.php\"><div>" . $_SESSION['pseudo'] . "</div></a></li>";
-             echo "<li><a href=\"./deconnection.php\" onclick=\"javascript: return confirm('voulez vous vous déconnecter?');\"><div>Deconnexion</div></a></li>";
+             echo "<li><a href=\"./traitement_deconnection.php\" onclick=\"javascript: return confirm('voulez vous vous déconnecter?');\"><div>Deconnexion</div></a></li>";
            }
            else{
              echo "<li><a href=\"./connection_redacteur.php\"><div>Connexion</div></li></a></li>";
